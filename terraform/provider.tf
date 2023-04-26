@@ -1,7 +1,7 @@
 provider "aws" {
-  assume_role {
-    role_arn = "arn:aws:iam::171500075550:role/terraform-guru"
-  }
+  # assume_role {
+  #   role_arn = "arn:aws:iam::171500075550:role/terraform-guru"
+  # }
 
 }
 
