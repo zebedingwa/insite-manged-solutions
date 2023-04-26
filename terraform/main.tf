@@ -8,25 +8,25 @@ resource "aws_ecr_repository" "MY-ECR" {
 }
 
 resource "aws_vpc" "myVOIP" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block           = "10.0.0.0/16"
   enable_dns_hostnames = true
 }
 
 resource "aws_subnet" "subzero" {
-  vpc_id     = aws_vpc.myVOIP.id
-  cidr_block = var.cidr_subzero_1 
-map_public_ip_on_launch = true
-availability_zone = var.subnet12_az
+  vpc_id                  = aws_vpc.myVOIP.id
+  cidr_block              = var.cidr_subzero_1
+  map_public_ip_on_launch = true
+  availability_zone       = var.subnet12_az
   tags = {
     Name = "subzero"
   }
 }
 
 resource "aws_subnet" "subone" {
-  vpc_id     = aws_vpc.myVOIP.id
-  cidr_block = var.cidr_subone_2 
+  vpc_id                  = aws_vpc.myVOIP.id
+  cidr_block              = var.cidr_subone_2
   map_public_ip_on_launch = true
-  availability_zone = var.subnet13_az
+  availability_zone       = var.subnet13_az
 
   tags = {
     Name = "subone"
@@ -34,8 +34,8 @@ resource "aws_subnet" "subone" {
 }
 
 resource "aws_subnet" "subtwo" {
-  vpc_id     = aws_vpc.myVOIP.id
-  cidr_block = var.cidr_subtwo_3
+  vpc_id            = aws_vpc.myVOIP.id
+  cidr_block        = var.cidr_subtwo_3
   availability_zone = var.subnet14_az
 
   tags = {
@@ -44,8 +44,8 @@ resource "aws_subnet" "subtwo" {
 }
 
 resource "aws_subnet" "subthree" {
-  vpc_id     = aws_vpc.myVOIP.id
-  cidr_block = var.cidr_subthree_4 
+  vpc_id            = aws_vpc.myVOIP.id
+  cidr_block        = var.cidr_subthree_4
   availability_zone = var.subnet15_az
 
   tags = {
@@ -90,7 +90,7 @@ resource "aws_route_table" "prod-priv-rt" {
 resource "aws_eip" "ezp" {
   vpc = true
   tags = {
-   Name = "demarko"
+    Name = "demarko"
   }
 }
 
