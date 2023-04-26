@@ -122,6 +122,4 @@ resource "aws_nat_gateway" "chuckskin" {
     Name = "demarko-nat"
   }
 }
-#  
-#
 
