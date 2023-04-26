@@ -1,0 +1,1 @@
+# insite-manged-solutions
