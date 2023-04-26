@@ -6,12 +6,12 @@ on:
    branches:
    - main
    paths:
-   - infrastructure/**
+   - terraform/**
  pull_request:
    branches:
    - main
    paths:
-   - infrastructure/**
+   - terraform/**
  
 env:
  TF_LOG: INFO
@@ -30,7 +30,7 @@ jobs:
      run:
        shell: bash
        # We keep Terraform files in the infrastructure directory.
-       working-directory: ./infrastructure
+       working-directory: ./terraform
  
    steps:
      - name: Checkout the repository
@@ -48,7 +48,7 @@ jobs:
      - name: Terraform format
        id: fmt
        run: terraform fmt -check
-    
+    s
      - name: Terraform validate
        id: validate
        run: terraform validate
